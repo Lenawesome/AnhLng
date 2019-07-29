@@ -22,7 +22,7 @@
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="post_test_listing_data_source" xsi:type="string">AnhLng\ChangePW\Model\ResourceModel\Contact\Grid\Collection</item>
+                <item name="changepassword_form_data_source" xsi:type="string">AnhLng\ChangePW\Model\ResourceModel\Contact\Grid\Collection</item>
             </argument>
         </arguments>
     </type>
