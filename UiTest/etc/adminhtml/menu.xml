@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="AnhLng_UiTest::uitest" title="Test UI Component" translate="title" module="AnhLng_UiTest" sortOrder="51" dependsOnModule="AnhLng_UiTest" resource="AnhLng_UiTest::uitest" />
+
+        <add id="AnhLng_UiTest::uitest_sub" title="My Ui Component" translate="title" module="AnhLng_UiTest" parent="AnhLng_UiTest::uitest" sortOrder="10" dependsOnModule="AnhLng_UiTest" action="uitest/index/index" resource="AnhLng_UiTest::uitest_sub" />
+    </menu>
+</config>
