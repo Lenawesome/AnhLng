@@ -35,11 +35,17 @@ class Save extends \Magento\Backend\App\Action
 		$this->resultRedirect->setPath('customer/*/');
         $data = $this->getRequest()->getPostValue();
         $id = $data['entity_id'];
-        $password = $data['password'];
-        $customer = $this->customerFactory->create();
-        $customer = $customer->load($id);
-        $customer = $customer->changePassword($password);
-        $customer->save();
+        if($id){
+            $password = $data['password'];
+            $customer = $this->customerFactory->create();
+            $customer = $customer->load($id);
+            $customer = $customer->changePassword($password);
+            $customer->save();
+        }else{
+            $customer = $this->customerFactory->create();
+            $customer->setData($data);
+            $customer->save();
+        }
 //        $customer = $this->customerRepository->getById($id);
 //        $this->customerRepository->save($customer, $this->encryptor->getHash($password, true));
         return $this->resultRedirect;

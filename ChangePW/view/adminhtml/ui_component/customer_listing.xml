@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <settings>
+        <buttons>
+            <button name="nabtn">
+                <url path="changepw/index/addbtn" />
+                <class>primary</class>
+                <label translate="true">Na adds new customer</label>
+            </button>
+        </buttons>
+    </settings>
     <columns name="customer_columns">
         <actionsColumn name="change_password" class="AnhLng\ChangePW\Ui\Component\Listing\Columns\ChangePassword">
             <argument name="data" xsi:type="array">

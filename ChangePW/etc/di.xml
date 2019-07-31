@@ -23,6 +23,7 @@
         <arguments>
             <argument name="collections" xsi:type="array">
                 <item name="changepassword_form_data_source" xsi:type="string">AnhLng\ChangePW\Model\ResourceModel\Contact\Grid\Collection</item>
+                <item name="naadd_form_data_source" xsi:type="string">AnhLng\ChangePW\Model\ResourceModel\Contact\Grid\Collection</item>
             </argument>
         </arguments>
     </type>
