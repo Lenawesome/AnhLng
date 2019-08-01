@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="AnhLng_NaPayment::napayment" title="Na Customer" translate="title" module="AnhLng_NaPayment" sortOrder="51" dependsOnModule="AnhLng_NaPayment" resource="AnhLng_NaPayment::napayment" />
+
+        <add id="AnhLng_NaPayment::paymentmethod" title="All Customer" translate="title" module="AnhLng_NaPayment" parent="AnhLng_NaPayment::napayment" sortOrder="10" dependsOnModule="AnhLng_NaPayment" action="napayment/index/index" resource="AnhLng_NaPayment::paymentmethod" />
+    </menu>
+</config>
