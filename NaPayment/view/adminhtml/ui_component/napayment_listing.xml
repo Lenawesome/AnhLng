@@ -187,7 +187,7 @@
                 </item>
             </argument>
         </column>
-        <column name="gender" >
+        <column name="gender">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="visible" xsi:type="boolean">true</item>
@@ -204,12 +204,23 @@
             </argument>
         </column>
         <!-- cột Action -->
-        <actionsColumn name="actions" class="AnhLng\ChangePW\Ui\Component\Listing\Columns\ChangePassword">
+        <actionsColumn name="changepassword" class="AnhLng\ChangePW\Ui\Component\Listing\Columns\ChangePassword">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="resizeEnabled" xsi:type="boolean">false</item>
-                    <item name="resizeDefaultWidth" xsi:type="string">107</item>
                     <item name="indexField" xsi:type="string">entity_id</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="label" xsi:type="string" translate="true">Change Password</item>
+                    <item name="sortOrder" xsi:type="number">12</item>
+                </item>
+            </argument>
+        </actionsColumn>
+        <actionsColumn name="actions" class="AnhLng\NaPayment\Ui\Component\Listing\Columns\Actions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">entity_id</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="label" xsi:type="string" translate="true">Actions</item>
+                    <item name="sortOrder" xsi:type="number">13</item>
                 </item>
             </argument>
         </actionsColumn>

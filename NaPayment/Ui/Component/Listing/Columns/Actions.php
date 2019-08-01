@@ -1,12 +1,12 @@
 <?php
-namespace AnhLng\ChangePW\Ui\Component\Listing\Columns;
+namespace AnhLng\NaPayment\Ui\Component\Listing\Columns;
 
 use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
 
-class ChangePassword extends Column
+class Actions extends Column
 {
     /**
      * @var UrlInterface
@@ -44,9 +44,14 @@ class ChangePassword extends Column
          if(isset($dataSource['data']['items'])) {
             foreach($dataSource['data']['items'] as &$item)
             {
-                $item[$this->getData('name')]['changepw'] = [
-                    'href' => $this->urlBuilder->getUrl('changepw/index/changepassword', ['id' => $item['entity_id']]),
-                    'label' => __('ChangePassword'),
+                $item[$this->getData('name')]['edit'] = [
+                    'href' => $this->urlBuilder->getUrl('napayment/index/edit', ['id' => $item['entity_id']]),
+                    'label' => __('Edit'),
+                    'hidden' => false
+                ];
+                $item[$this->getData('name')]['delete'] = [
+                    'href' => $this->urlBuilder->getUrl('napayment/index/delete', ['id' => $item['entity_id']]),
+                    'label' => __('Delete'),
                     'hidden' => false
                 ];
             }
