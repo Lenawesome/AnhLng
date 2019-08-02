@@ -48,9 +48,8 @@ class Save extends \Magento\Backend\App\Action
             $customer->setEmail($data['email']);
             $customer->setDob($data['dob']);
         }
-        $customer = $this->customerRepository->save($customer,$this->encryptor->getHash($data['password'],true));
-//        $customer = $this->customerRepository->getById($id);
-//        $this->customerRepository->save($customer, $this->encryptor->getHash($password, true));
+        $password = isset($data['password']) ? $data['password'] : null;
+        $customer = $this->customerRepository->save($customer,$this->encryptor->getHash($password,true));
         return $this->resultRedirect;
     }
 }
