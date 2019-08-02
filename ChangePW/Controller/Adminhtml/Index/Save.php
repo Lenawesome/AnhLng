@@ -15,17 +15,19 @@ class Save extends \Magento\Backend\App\Action
         \Magento\Backend\App\Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
 //        \Magento\Customer\Model\ResourceModel\CustomerRepository $customerRepository,
-        \Magento\Customer\Model\CustomerFactory $customerFactory,
+        \Magento\Customer\Api\CustomerRepositoryInterface $customerRepository,
         \Magento\Framework\Encryption\EncryptorInterface $encryptor,
-        \Magento\Framework\Controller\ResultFactory $result
+        \Magento\Framework\Controller\ResultFactory $result,
+        \Magento\Customer\Model\Data\CustomerFactory $customerFactory
     )
     {
-        $this->customerFactory = $customerFactory;
+        $this->customerRepository = $customerRepository;
         $this->resultPageFactory = $resultPageFactory;
+        $this->customerFactory = $customerFactory;
         $this->resultRedirect = $result;
+        
 //        $this->customerRepository = $customerRepository;
         $this->encryptor = $encryptor;
-        $this->resultRedirect = $result;
         parent::__construct($context);
     }
 
@@ -36,16 +38,17 @@ class Save extends \Magento\Backend\App\Action
         $data = $this->getRequest()->getPostValue();
         $id = $data['entity_id'];
         if($id){
-            $password = $data['password'];
-            $customer = $this->customerFactory->create();
-            $customer = $customer->load($id);
-            $customer = $customer->changePassword($password);
-            $customer->save();
+           $customer = $this->customerRepository->getById($id);
+            
         }else{
             $customer = $this->customerFactory->create();
-            $customer->setData($data);
-            $customer->save();
+            $customer->setFirstname($data['firstname']);
+            $customer->setMiddlename($data['middlename']);
+            $customer->setLastname($data['lastname']);
+            $customer->setEmail($data['email']);
+            $customer->setDob($data['dob']);
         }
+        $customer = $this->customerRepository->save($customer,$this->encryptor->getHash($data['password'],true));
 //        $customer = $this->customerRepository->getById($id);
 //        $this->customerRepository->save($customer, $this->encryptor->getHash($password, true));
         return $this->resultRedirect;
