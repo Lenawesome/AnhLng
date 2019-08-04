@@ -30,16 +30,33 @@ class Save extends \Magento\Backend\App\Action
         $this->encryptor = $encryptor;
         parent::__construct($context);
     }
-
+    function randomPassword() {
+    $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+    $pass = array(); 
+    $alphaLength = strlen($alphabet) - 1; 
+    for ($i = 0; $i < 8; $i++) {
+        $n = rand(0, $alphaLength);
+        $pass[] = $alphabet[$n];
+    }
+    return implode($pass); 
+    }
+    
     public function execute()
     {
         $this->resultRedirect = $this->resultRedirectFactory->create();
 		$this->resultRedirect->setPath('customer/*/');
         $data = $this->getRequest()->getPostValue();
-        $id = $data['entity_id'];
-        if($id){
-           $customer = $this->customerRepository->getById($id);
-            
+        $password = isset($data['password']) ? $data['password'] : null;
+        
+        if(!empty($data['entity_id'])){
+            $customer = $this->customerRepository->getById($data['entity_id']);
+            if($password == null){
+                $customer->setFirstname($data['firstname']);
+                $customer->setMiddlename($data['middlename']);
+                $customer->setLastname($data['lastname']);
+                $customer->setEmail($data['email']);
+                $customer->setDob($data['dob']);
+            }            
         }else{
             $customer = $this->customerFactory->create();
             $customer->setFirstname($data['firstname']);
@@ -47,9 +64,10 @@ class Save extends \Magento\Backend\App\Action
             $customer->setLastname($data['lastname']);
             $customer->setEmail($data['email']);
             $customer->setDob($data['dob']);
+            $password = $this->randomPassword();
+            // sendMail();
         }
-        $password = isset($data['password']) ? $data['password'] : null;
-        $customer = $this->customerRepository->save($customer,$this->encryptor->getHash($password,true));
+        $this->customerRepository->save($customer,$this->encryptor->getHash($password,true));
         return $this->resultRedirect;
     }
 }
