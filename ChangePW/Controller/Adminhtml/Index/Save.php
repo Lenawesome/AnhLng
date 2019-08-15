@@ -65,7 +65,7 @@ class Save extends \Magento\Backend\App\Action
             $customer->setEmail($data['email']);
             $customer->setDob($data['dob']);
             $password = $this->randomPassword();
-            // sendMail();
+            // redirectToSendEmail();
         }
         $this->customerRepository->save($customer,$this->encryptor->getHash($password,true));
         return $this->resultRedirect;

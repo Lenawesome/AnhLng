@@ -1,5 +1,5 @@
 <?php
-namespace AnhLng\ChangePW\Block\Adminhtml\MyCustomer\Edit;
+namespace AnhLng\ProductQuestion\Block\Adminhtml\MyQuestion\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
@@ -17,6 +17,6 @@ class BackButton extends GenericButton implements ButtonProviderInterface
 
     public function getBackUrl()
     {
-        return $this->getUrl('customer/*/');
+        return $this->getUrl('listquestion/*/');
     }
 }

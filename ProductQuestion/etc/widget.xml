@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:nawidget:Magento_Widget:etc/widget.xsd">
+    <widget class="AnhLng\ProductQuestion\Block\Widget\Question" id="anhlng_productquestion_question">
+        <label>Question</label>
+        <description>Question</description>
+        <parameters>
+            <parameter name="quantity" sort_order="10" visible="true" xsi:type="number">
+                <label>Image quantity</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

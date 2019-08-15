@@ -1,0 +1,20 @@
+<?php
+$list = $block->getQuestion(); 
+if(count($list)>0):
+?>
+  
+   <div class="question-list">
+    <div class="title" style="font-weight:bold">
+        List question for this product
+    </div>
+    <?php foreach ($list as $a):?>
+    <div class="list">
+        <div class="customer-name">Question from: <?php echo $a->getC_name();?></div>
+        <div class="content">Content: <?php echo $a->getContent();?></div>
+    </div>
+    <?php endforeach;?>
+</div>
+<?php endif;?>
+<?php
+    $manager = $this->getObjectManager();
+    $object  = $manager->create('Magento\Framework\Customer\Model\Customer');

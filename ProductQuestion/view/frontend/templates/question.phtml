@@ -1,0 +1,16 @@
+<?php 
+    $customer = $block->getCustomer();
+    $product = $block->getProduct();
+    if($customer):
+?>
+   <form action="question/index/submitquestion" method="post">
+    <input type="hidden" name="name" id="name" value="<?=$customer->getFirstName()?>">
+    <input type="hidden" id="email" name="email" value="<?=$customer->getEmail()?>">
+    <label for="question-area">Have any question</label>
+    <textarea required name="question" id="question-area" cols="30" rows="10" placeholder="Enter your question here..."></textarea>
+    <input type="hidden" value="<?= $product->getId() ?>" name="product-id" id="product-id">
+    <input type="hidden" value="<?= $customer->getId() ?>" name="customer-id" id="customer-id">
+       <input type="hidden" name="pName" id="pName" value="<?=$product->getName()?>">
+    <button style="background-color: #3e2396;padding: 20px;display:block;color:white;" type="submit;">Submit your question</button>
+</form>
+<?php endif;?>

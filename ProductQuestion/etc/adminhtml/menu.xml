@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="
+urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="AnhLng_ProductQuestion::questions" 
+        title="Questions" 
+        translate="title" 
+        module="AnhLng_ProductQuestion" 
+        sortOrder="52" 
+        dependsOnModule="AnhLng_ProductQuestion" 
+        resource="AnhLng_ProductQuestion::questions" />
+        <add id="AnhLng_ProductQuestion::question_list" 
+        title="List Question" 
+        translate="title" 
+        module="AnhLng_ProductQuestion" 
+        parent="AnhLng_ProductQuestion::questions" 
+        sortOrder="12" 
+        dependsOnModule="AnhLng_ProductQuestion" 
+        action="listquestion/index" 
+        resource="AnhLng_ProductQuestion::questions" />
+    </menu>
+</config> 

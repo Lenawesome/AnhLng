@@ -1,0 +1,14 @@
+<?php 
+namespace AnhLng\NaWidget\Block\Widget;
+ 
+use Magento\Framework\View\Element\Template;
+use Magento\Widget\Block\BlockInterface; 
+ 
+class Posts extends Template implements BlockInterface 
+{
+   protected $_template = "widget/posts.phtml";
+    
+    public function showParam(){
+        return $this->getData();
+    }
+}

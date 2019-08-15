@@ -1,0 +1,25 @@
+<?php
+$questionList = $block->getCustomerQuestion();
+?>
+<div class="table-weapper orders-history">
+<table class="data table table-order-items history">
+    
+        <tr>
+            <th>Product name</th>
+            <th>My Question</th>
+            <th>Create At</th>
+            <th>Update At</th>
+            <th>Actions</th>
+        </tr>
+    <?php foreach($questionList as $question):?>
+    <tr>
+        <td><?=$question->getP_name();?></td>
+        <td><?=$question->getContent();?></td>
+        <td><?=$question->getCreation_time();?></td>
+        <td><?=$question->getUpdate_time();?></td>
+        <td><a href="/magento2/naquestion/index/edit?id=<?=$question->getQuestion_id()?>">Edit</a></td>
+    </tr>
+<?php endforeach;?>
+</table>
+</div>
+
