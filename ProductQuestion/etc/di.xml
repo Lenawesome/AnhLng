@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-     <preference for="AnhLng\ProductQuestion\Api\QuestionRepositoryInterface" type="AnhLng\ProductQuestion\Model\QuestionRepository" />
+    <preference for="AnhLng\ProductQuestion\Api\QuestionRepositoryInterface" type="AnhLng\ProductQuestion\Model\QuestionRepository" />
     <preference for="AnhLng\ProductQuestion\Api\Data\QuestionInterface" type="AnhLng\ProductQuestion\Model\Question" />
     <preference for="AnhLng\ProductQuestion\Api\Data\QuestionSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
     <virtualType name="MyQuestionGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">

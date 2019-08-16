@@ -4,7 +4,7 @@
         <label>Question</label>
         <description>Question</description>
         <parameters>
-            <parameter name="quantity" sort_order="10" visible="true" xsi:type="number">
+            <parameter name="quantity" sort_order="10" visible="true" xsi:type="text">
                 <label>Image quantity</label>
             </parameter>
         </parameters>

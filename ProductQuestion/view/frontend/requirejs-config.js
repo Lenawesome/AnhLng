@@ -1,12 +1,10 @@
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-
 var config = {
-    map: {
-        '*': {
-            carsousel:    'js/ow.carousel.min',
+    paths: {            
+            'owlcarousel': "js/owlcarousel"
+        },   
+    shim: {
+        'owlcarousel': {
+            deps: ['jquery']
         }
     }
 };

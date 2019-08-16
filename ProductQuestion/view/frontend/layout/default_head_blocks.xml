@@ -1,6 +1,10 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <css src="../web/css/owl.carousel.min.css"></css>
-        <css src="../web/css/owl.theme.default.min.css"></css>
+        <!-- <css src="../web/css/owl.carousel.min.css"></css>
+        <css src="../web/css/owl.theme.default.min.css"></css> -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" src_type="url" />
+        <css src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" src_type="url" />
+        <css src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" src_type="url" />
+        <css src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" src_type="url" />
     </head>
 </page>
