@@ -2,12 +2,13 @@
     $question = $block->getQuestion();
 ?>
 
-<form action="/magento2/naquestion/index/save">
-    <input type="hidden" value="<?=$question->getQuesion_id();?>" name="question_id">
+<form action="/magento2/naquestion/index/save" method="POST">
+    <input type="hidden" value="<?=$question->getQuestion_id();?>" name="id">
     <label for="content">My question</label>
     <textarea <?php
-        if($question->getContent()!="none") echo "disabled ";
+        if( $question->getAnswer() != "none" ) echo "disabled ";
     ?>name="content" id="content" cols="30" rows="5"><?=$question->getContent();?></textarea>
     <label for="answer">Admin answer</label>
     <textarea disabled name="answer" id="anser" cols="30" rows="5"><?=$question->getAnswer();?></textarea>
+    <button type="submit" name="submit">Submit</button>
 </form>

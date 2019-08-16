@@ -1,20 +1,20 @@
 <?php
 $list = $block->getQuestion(); 
-if(count($list)>0):
+if($list!=null):
 ?>
   
-   <div class="question-list">
+   <div class="question-list" style="margin-top: 50px; margin-bottom:50px; border: 1px solid black; padding: 10px">
     <div class="title" style="font-weight:bold">
         List question for this product
     </div>
     <?php foreach ($list as $a):?>
     <div class="list">
-        <div class="customer-name">Question from: <?php echo $a->getC_name();?></div>
-        <div class="content">Content: <?php echo $a->getContent();?></div>
+        <?php $id = $a->getCustomer_id();
+            $customer = $block->getCustomer($id);        
+        ?>
+        <div class="customer-name"><b>Question from:</b> <?php echo $customer->getFirstname()." ".$customer->getMiddlename()." ".$customer->getLastname() ;?></div>
+        <div class="content"><b>Question:</b> <?php echo $a->getContent();?></div>
     </div>
     <?php endforeach;?>
-</div>
+    </div>
 <?php endif;?>
-<?php
-    $manager = $this->getObjectManager();
-    $object  = $manager->create('Magento\Framework\Customer\Model\Customer');

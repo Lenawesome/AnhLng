@@ -3,7 +3,7 @@
     $product = $block->getProduct();
     if($customer):
 ?>
-   <form action="question/index/submitquestion" method="post">
+   <form action="naquestion/index/submitquestion" method="post">
     <input type="hidden" name="name" id="name" value="<?=$customer->getFirstName()?>">
     <input type="hidden" id="email" name="email" value="<?=$customer->getEmail()?>">
     <label for="question-area">Have any question</label>

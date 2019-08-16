@@ -9,16 +9,6 @@
 
        <item name="spinner" xsi:type="string">productquestion_columns</item>
 
-<!--
-        <item name="buttons" xsi:type="array">
-            <item name="add" xsi:type="array">
-                <item name="name" xsi:type="string">add</item>
-                <item name="label" xsi:type="string" translate="true">Add a new customer</item>
-                <item name="class" xsi:type="string">primary</item>
-                <item name="url" xsi:type="string">changepw/index/addbtn</item>
-            </item>
-        </item>
--->
     </argument>
     <!-- tham số class xác định đối tượng được sử dụng -->
     <dataSource name="productquestion_listing_data_source">
