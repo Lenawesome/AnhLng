@@ -30,7 +30,7 @@ class QuestionList extends \Magento\Framework\View\Element\Template
                 $quesArray = array();
                 foreach($questionList as $question){
                     $questPId = $question->getProduct_id();
-                    if($questPId==$productId){
+                    if($questPId==$productId && $question->getApproved()=='true'){
                         $quesArray[] = $question;
                     }
                 }

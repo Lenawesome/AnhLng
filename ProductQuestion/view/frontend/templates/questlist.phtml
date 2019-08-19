@@ -7,14 +7,16 @@ if($list!=null):
     <div class="title" style="font-weight:bold">
         List question for this product
     </div>
-    <?php foreach ($list as $a):?>
     <div class="list">
+            <?php foreach ($list as $a):?>
         <?php $id = $a->getCustomer_id();
             $customer = $block->getCustomer($id);        
         ?>
         <div class="customer-name"><b>Question from:</b> <?php echo $customer->getFirstname()." ".$customer->getMiddlename()." ".$customer->getLastname() ;?></div>
-        <div class="content"><b>Question:</b> <?php echo $a->getContent();?></div>
+        <div class="content"><?php echo $a->getContent();?></div>
+        <p><b>Answer From Admin:</b> <?=$a->getAnswer()?></p>
+        <br>
+        <?php endforeach;?>
     </div>
-    <?php endforeach;?>
     </div>
 <?php endif;?>
