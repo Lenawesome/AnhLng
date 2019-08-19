@@ -59,6 +59,11 @@ class Approve extends Column
                     'label' => __('Answer Question'),
                     'hidden' => false
                 ];
+                $item[$this->getData('name')]['deny'] = [
+                    'href' => $this->urlBuilder->getUrl('listquestion/index/deny', ['id' => $item['question_id']]),
+                    'label' => __('Deny Question'),
+                    'hidden' => false
+                ];
             }
          }
 
